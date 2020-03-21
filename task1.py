@@ -1,4 +1,5 @@
 import requests
+import os
 
 res = requests.get('https://www.theverge.com/tech') # Obtain the source of the webpage, and
 f = open('site.html', 'w')                          # write it to a local file.
@@ -24,3 +25,4 @@ for line in lines:
         ls = lst(line)
         print('%d: %s' % (i, ls[len(ls) - 5]))
 print('')
+os.remove('site.html')      #Delete the redundant local file after output
